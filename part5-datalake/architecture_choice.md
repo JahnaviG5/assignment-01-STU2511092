@@ -1,6 +1,6 @@
-## Architecture Recommendation
+Architecture Recommendation
 
-For a fast-growing food delivery startup collecting GPS logs, customer text reviews, payment transactions, and restaurant menu images, I recommend a **Data Lakehouse** architecture.
+For a fast-growing food delivery startup collecting GPS logs, customer text reviews, payment transactions, and restaurant menu images, I recommend a Data Lakehouse architecture.
 
 **Reason 1 — Mixed Data Types in One Place:**
 The startup's data is fundamentally varied — structured payments, semi-structured GPS events, unstructured text reviews, and binary menu images. A Data Warehouse only handles structured, pre-schemed data and would require discarding or heavily pre-processing the rest. A pure Data Lake stores everything but offers poor query performance for business reporting. A Lakehouse (e.g., Delta Lake or Apache Iceberg on cloud storage) handles all formats natively while adding ACID transactions and schema enforcement on top, so nothing gets thrown away.
